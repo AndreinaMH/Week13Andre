@@ -1,9 +1,7 @@
 package pet.store.entity;
 
-
 import java.util.HashSet;
 import java.util.Set;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -27,9 +25,9 @@ public class Customer {
 	private String petStoreAddress;
 	private String petStoreCity;
 	private String petStoreState;
-	private String petStoreZipCode;
-	//Do I need to create getter and setters for customerFirstName and customerLastName??
-	private String customerLastName; 
+	private String petStoreZipCode;	 
+	private String customerLastName;
+	// ME pidieron que incluyera pet store address, city, zipCode y Estado
 	
 	@Column (unique = true)
 	private String customerEmail;
