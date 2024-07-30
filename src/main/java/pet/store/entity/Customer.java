@@ -27,7 +27,6 @@ public class Customer {
 	private String petStoreState;
 	private String petStoreZipCode;	 
 	private String customerLastName;
-	// ME pidieron que incluyera pet store address, city, zipCode y Estado
 	
 	@Column (unique = true)
 	private String customerEmail;

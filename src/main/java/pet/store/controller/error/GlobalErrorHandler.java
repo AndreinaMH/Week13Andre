@@ -1,5 +1,4 @@
 package pet.store.controller.error;
-
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -17,6 +16,7 @@ public class GlobalErrorHandler {
 private enum LogStatus {
 STACK_TRACE,MESSAGE_ONLY
 }
+
 @Data
 private class ExceptionMessage {
 private String message;
@@ -30,7 +30,6 @@ private String uri;
 public ExceptionMessage handleNoSuchElementException (NoSuchElementException ex, WebRequest webRequest){
 return buildExceptionMessage(ex, webRequest);
 }
-
 private ExceptionMessage buildExceptionMessage (Exception ex, WebRequest webRequest) {
 String message = ex.toString();
 String statusReason = HttpStatus.NOT_FOUND.getReasonPhrase();
@@ -41,7 +40,6 @@ String uri = null;
 if(webRequest instanceof ServletWebRequest swr) {
 uri = swr.getRequest().getRequestURI();
 }
-
 log.error("Exception: {}", message);
 
 ExceptionMessage exMsg = new ExceptionMessage ();
